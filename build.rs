@@ -31,8 +31,6 @@ fn main() -> Result<()> {
     }
     std::fs::create_dir_all(&out_path).context("failed to create out_path")?;
 
-    println!("cargo:warning=out_path: {:?}", out_path);
-
     Command::new(&clang_path)
         .args(["--target=wasm32-unknown-unknown", "-c", "test.c", "-o"])
         .arg(out_path.join("libtest1.o"))
