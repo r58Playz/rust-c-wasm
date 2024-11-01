@@ -6,6 +6,9 @@ edition = "2021"
 [lib]
 crate-type = ["cdylib"]
 
+[profile.release]
+opt-level = 'z'
+
 [build-dependencies]
 anyhow = "1.0.91"
 which = "6.0.3"
