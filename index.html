@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<title>rustwasm + c test</title>
+</head>
+
+<body>
+	<script type="module">
+		import wasm, {add, hello} from "./out/wasm_test.js";
+
+		await wasm({ moduleOrPath: "./out/wasm_test_bg.wasm" });
+
+
+		console.log(add(1, 2));
+		while(true) {
+		console.log(hello());
+		await new Promise(r=>setTimeout(r,10));
+		}
+	</script>
+</body>
+
+</html>
